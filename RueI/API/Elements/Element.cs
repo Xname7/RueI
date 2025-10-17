@@ -93,6 +93,11 @@ public abstract class Element
     public int ZIndex { get; init; } = 1;
 
     /// <summary>
+    /// Gets the element's priority. Higher values indicate higher priority.
+    /// </summary>
+    public int Priority { get; init; } = 0;
+
+    /// <summary>
     /// Gets or initializes the parameters of the element.
     /// </summary>
     /// <remarks>

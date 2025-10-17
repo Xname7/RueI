@@ -301,6 +301,11 @@ public sealed class RueDisplay
 
     private void AddElement(Tag tag, Element element, float expireAt)
     {
+        if (this.elements.TryGetValue(tag, out StoredElement existing) && existing.Element.Priority > element.Priority)
+        {
+            return;
+        }
+
         this.Remove(tag);
 
         StoredElement storedElement = new()
